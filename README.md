@@ -6,19 +6,22 @@
 2. Installer Maven 3.6.3+ (https://maven.apache.org/download.cgi).
 3. Configurer les répertoires correspondants dans le fichier cli.cmd à la racine du projet (version windows, faire le script équivalent si Linux).
 4. Lancer le script.
-5. Pour builder l'application, exécuter la commande :
+5. Lancer MySQL (username : root, password : eisti0001).
+6. Via MySQLWorkbench (qu'on a normalement quand on fait l'installation de MySQL, faire **File > Open Script SQL** et sélectionner le fichier .sql dans src/main/resources/database/sql/annonces.sql
+7. Charger la table annonce avec le script Python.
+8. Pour builder l'application, exécuter la commande :
       > **mvn clean package**
    
 Cela permettra de télécharger les dépendances du projet ainsi que construire le jar de l'application dans **/target**.
 
-6. Pour démarrer le serveur d'application, exécuter la commande :
+9. Pour démarrer le serveur d'application, exécuter la commande :
       > **mvn spring-boot:run**
 
-7. Si besoin de modifier les paramètres de connexion à la base de données, modifier le fichier **/src/main/resources/application.properties**.
+10. Si besoin de modifier les paramètres de connexion à la base de données, modifier le fichier **/src/main/resources/application.properties**.
       
 L'application est désormais lancée, le serveur écoute sur le port **8080**.
 
-Note : **Une dépendance à Thymeleaf a déjà été intégrée au projet via Spring.**
+Note : **Une dépendance à Thymeleaf a déjà été intégrée au projet.**
 
 ## Pour tester l'application
 

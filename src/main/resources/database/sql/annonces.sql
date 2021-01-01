@@ -1,4 +1,5 @@
-CREATE TABLE `modifiee` (
+CREATE TABLE `annonce` (
+  `id` bigint NOT NULL AUTO_INCREMENT,
   `nom_annonce` text,
   `ville` text,
   `adresse` text,
@@ -14,5 +15,7 @@ CREATE TABLE `modifiee` (
   `contact` text,
   `site` text,
   `reference_du_site` text,
-  `indication_prix` text
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `indication_prix` text,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id_UNIQUE` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=14500 DEFAULT CHARSET=utf8;
