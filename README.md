@@ -29,6 +29,8 @@ b. Importer dans Postman le fichier .json à la racine du projet. Il permet de r
 
 1. Builder l'application, exécuter la commande :
       > **mvn clean package**
+      
+Ou bien, utiliser directement le .jar de la release 1.0 dans Github.
 
 2. Lancer la commande à partir du cli.cmd :
       > **java -jar annonces-immo-1.0.jar**
