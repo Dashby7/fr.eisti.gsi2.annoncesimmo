@@ -1,0 +1,166 @@
+{
+	"info": {
+		"_postman_id": "b2e07d1f-9bfe-400b-8042-8835174d0ce2",
+		"name": "AnnoncesImmo",
+		"description": "Requêtes de test du backend Annonces Immo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET Annonce par id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/annonces/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"annonces",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Toutes les Annonces",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/annonces",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"annonces"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Compter toutes les annonces",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/annonces/count",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"annonces",
+						"count"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Existence d'une Annonce par id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/annonces/exists/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"annonces",
+						"exists",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST Créer une nouvelle Annonce",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 14636,\r\n    \"nomAnnonce\": \"Bureau à vendre ou à louer 86280 SAINT BENOIT\",\r\n    \"ville\": \"brive-la-gaillarde\",\r\n    \"adresse\": \"19100 brive-la-gaillarde\",\r\n    \"codePostal\": \"19100\",\r\n    \"prix\": \"25020\",\r\n    \"surface\": 361,\r\n    \"divisibilite\": \"Non Divisible\",\r\n    \"disponibilite\": \"Immédiate\",\r\n    \"typeTransaction\": \"à louer\",\r\n    \"typeBien\": \"bureau\",\r\n    \"lien\": \"https://immobilier.cbre.fr/offre/a-louer/bureaux/86280/saint-benoit/8686845580.aspx\",\r\n    \"lienPhoto\": \"https://immobilier.cbre.fr/Documents/Property/Small/86_86_845580.jpg\",\r\n    \"contact\": \"06 71 13 09 36\",\r\n    \"site\": \"CBRE\",\r\n    \"referenceSite\": \"38662\",\r\n    \"indicationPrix\": \"€ /an HT HC\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/annonces",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"annonces"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT Modifier une Annonce existante",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 14636,\r\n    \"nomAnnonce\": \"Bureau à vendre ou à louer 86280 SAINT BENOIT\",\r\n    \"ville\": \"toulouse\",\r\n    \"adresse\": \"19100 brive-la-gaillarde\",\r\n    \"codePostal\": \"19100\",\r\n    \"prix\": \"25020\",\r\n    \"surface\": 361,\r\n    \"divisibilite\": \"Non Divisible\",\r\n    \"disponibilite\": \"Immédiate\",\r\n    \"typeTransaction\": \"à louer\",\r\n    \"typeBien\": \"bureau\",\r\n    \"lien\": \"https://immobilier.cbre.fr/offre/a-louer/bureaux/86280/saint-benoit/8686845580.aspx\",\r\n    \"lienPhoto\": \"https://immobilier.cbre.fr/Documents/Property/Small/86_86_845580.jpg\",\r\n    \"contact\": \"06 71 13 09 36\",\r\n    \"site\": \"CBRE\",\r\n    \"referenceSite\": \"38662\",\r\n    \"indicationPrix\": \"€ /an HT HC\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/annonces",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"annonces"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE Supprimer une Annonce",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/annonces/14635",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"annonces",
+						"14635"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
