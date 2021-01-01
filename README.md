@@ -1,9 +1,9 @@
-# Projet Annonces Immo
+# Projet Annonces Immobilières
 
 ## Pour démarrer l'application
 
-1. Installer le JDK Java 15.
-2. Installer Maven 3.6.3+.
+1. Installer le JDK Java 15 (https://www.oracle.com/fr/java/technologies/javase-downloads.html).
+2. Installer Maven 3.6.3+ (https://maven.apache.org/download.cgi).
 3. Configurer les répertoires correspondants dans le fichier cli.cmd à la racine du projet (version windows, faire le script équivalent si Linux).
 4. Lancer le script.
 5. Pour builder l'application, exécuter la commande :
@@ -18,11 +18,13 @@ Cela permettra de télécharger les dépendances du projet ainsi que construire 
       
 L'application est désormais lancée, le serveur écoute sur le port **8080**.
 
+Note : **Une dépendance à Thymeleaf a déjà été intégrée au projet via Spring.**
+
 ## Pour tester l'application
 
 Il est possible d'utiliser le client REST **Postman**.
 
-1. Installer Postman (https://www.postman.com/downloads/)
+1. Installer Postman (https://www.postman.com/downloads/).
 2. Importer dans Postman le fichier .json à la racine du projet. Il permet de requêter l'ensemble des services de l'application, cela permettra de savoir si tout fonctionne bien. Penser à bien démarrer le serveur au préalable.
 
 ## Pour déployer l'application
