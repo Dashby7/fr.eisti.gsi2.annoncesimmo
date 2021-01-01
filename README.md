@@ -1,22 +1,34 @@
-# Getting Started
+# Projet Annonces Immo
 
-### Reference Documentation
-For further reference, please consider the following sections:
+## Pour démarrer l'application
 
-* [Official Apache Maven documentation](https://maven.apache.org/guides/index.html)
-* [Spring Boot Maven Plugin Reference Guide](https://docs.spring.io/spring-boot/docs/2.4.1/maven-plugin/reference/html/)
-* [Create an OCI image](https://docs.spring.io/spring-boot/docs/2.4.1/maven-plugin/reference/html/#build-image)
-* [Spring Web](https://docs.spring.io/spring-boot/docs/2.4.1/reference/htmlsingle/#boot-features-developing-web-applications)
-* [Thymeleaf](https://docs.spring.io/spring-boot/docs/2.4.1/reference/htmlsingle/#boot-features-spring-mvc-template-engines)
-* [Spring Data JPA](https://docs.spring.io/spring-boot/docs/2.4.1/reference/htmlsingle/#boot-features-jpa-and-spring-data)
+1. Installer le JDK Java 15.
+2. Installer Maven 3.6.3+.
+3. Configurer les répertoires correspondants dans le fichier cli.cmd à la racine du projet (version windows, faire le script équivalent si Linux).
+4. Lancer le script.
+5. Pour builder l'application, exécuter la commande :
+      > **mvn clean package**
+   
+Cela permettra de télécharger les dépendances du projet ainsi que construire le jar de l'application dans **/target**.
 
-### Guides
-The following guides illustrate how to use some features concretely:
+6. Pour démarrer le serveur d'application, exécuter la commande :
+      > **mvn spring-boot:run**
 
-* [Building a RESTful Web Service](https://spring.io/guides/gs/rest-service/)
-* [Serving Web Content with Spring MVC](https://spring.io/guides/gs/serving-web-content/)
-* [Building REST services with Spring](https://spring.io/guides/tutorials/bookmarks/)
-* [Handling Form Submission](https://spring.io/guides/gs/handling-form-submission/)
-* [Accessing Data with JPA](https://spring.io/guides/gs/accessing-data-jpa/)
-* [Accessing data with MySQL](https://spring.io/guides/gs/accessing-data-mysql/)
+7. Si besoin de modifier les paramètres de connexion à la base de données, modifier le fichier **/src/main/resources/application.properties**.
+      
+L'application est désormais lancée, le serveur écoute sur le port **8080**.
 
+## Pour tester l'application
+
+Il est possible d'utiliser le client REST **Postman**.
+
+a. Installer Postman
+b. Importer dans Postman le fichier .json à la racine du projet. Il permet de requêter l'ensemble des services de l'application. Bien démarrer le serveur au préalable.
+
+## Pour déployer l'application
+
+1. Builder l'application, exécuter la commande :
+      > **mvn clean package**
+
+2. Lancer la commande à partir du cli.cmd :
+      > **java -jar annonces-immo-1.0.jar**
