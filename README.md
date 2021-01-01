@@ -22,8 +22,8 @@ L'application est désormais lancée, le serveur écoute sur le port **8080**.
 
 Il est possible d'utiliser le client REST **Postman**.
 
-a. Installer Postman
-b. Importer dans Postman le fichier .json à la racine du projet. Il permet de requêter l'ensemble des services de l'application. Bien démarrer le serveur au préalable.
+1. Installer Postman (https://www.postman.com/downloads/)
+2. Importer dans Postman le fichier .json à la racine du projet. Il permet de requêter l'ensemble des services de l'application, cela permettra de savoir si tout fonctionne bien. Penser à bien démarrer le serveur au préalable.
 
 ## Pour déployer l'application
 
