@@ -1,22 +1,18 @@
-# Getting Started
+Pour lancer l'application :
 
-### Reference Documentation
-For further reference, please consider the following sections:
+1. Installer le JDK Java 15
+2. Installer Maven 3.6.3+
+3. Configurer les répertoires correspondants dans le fichier cli.cmd à la racine du projet (version windows)
+4. Lancer le script
+5. Pour builder l'application, exécuter la commande :
+      mvn clean package
+   Cela permettra de télécharger les dépendances du projet ainsi que construire le jar de l'application dans /target
+6. Pour démarrer le serveur d'application, exécuter la commande :
+      mvn spring-boot:run
+      
+L'application est désormais lancée, le serveur écoute sur le port 8080.
 
-* [Official Apache Maven documentation](https://maven.apache.org/guides/index.html)
-* [Spring Boot Maven Plugin Reference Guide](https://docs.spring.io/spring-boot/docs/2.4.1/maven-plugin/reference/html/)
-* [Create an OCI image](https://docs.spring.io/spring-boot/docs/2.4.1/maven-plugin/reference/html/#build-image)
-* [Spring Web](https://docs.spring.io/spring-boot/docs/2.4.1/reference/htmlsingle/#boot-features-developing-web-applications)
-* [Thymeleaf](https://docs.spring.io/spring-boot/docs/2.4.1/reference/htmlsingle/#boot-features-spring-mvc-template-engines)
-* [Spring Data JPA](https://docs.spring.io/spring-boot/docs/2.4.1/reference/htmlsingle/#boot-features-jpa-and-spring-data)
+Pour tester l'application, il est possible d'utiliser le client REST Postman.
 
-### Guides
-The following guides illustrate how to use some features concretely:
-
-* [Building a RESTful Web Service](https://spring.io/guides/gs/rest-service/)
-* [Serving Web Content with Spring MVC](https://spring.io/guides/gs/serving-web-content/)
-* [Building REST services with Spring](https://spring.io/guides/tutorials/bookmarks/)
-* [Handling Form Submission](https://spring.io/guides/gs/handling-form-submission/)
-* [Accessing Data with JPA](https://spring.io/guides/gs/accessing-data-jpa/)
-* [Accessing data with MySQL](https://spring.io/guides/gs/accessing-data-mysql/)
-
+a. Installer Postman
+b. Importer le projet Postman, fichier .json à la racine du projet. Il permet de requêter l'ensemble des services de l'application.
