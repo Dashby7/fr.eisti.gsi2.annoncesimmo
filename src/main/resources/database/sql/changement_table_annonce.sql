@@ -1,7 +1,7 @@
 ALTER TABLE `immobilier`.`modifiee` 
 ADD COLUMN `id` INT NULL FIRST;
 
-UPDATE annonce
+UPDATE modifiee
 SET id = (@rownum := 1 + @rownum)
 WHERE 0 = (@rownum:=0)
 ORDER BY id;
