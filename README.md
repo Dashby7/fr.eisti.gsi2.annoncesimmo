@@ -7,8 +7,9 @@
 3. Configurer les répertoires correspondants dans le fichier cli.cmd à la racine du projet (version windows, faire le script équivalent si Linux).
 4. Lancer le script.
 5. Lancer MySQL (username : root, password : eisti0001).
-6. Via MySQLWorkbench (qu'on a normalement quand on fait l'installation de MySQL, faire **File > Open Script SQL** et sélectionner le fichier .sql dans src/main/resources/database/sql/annonces.sql
-7. Charger la table annonce avec le script Python.
+6. Charger la table annonce avec le script Python.
+7. Via MySQLWorkbench (qu'on a normalement quand on fait l'installation de MySQL, faire **File > Open Script SQL** et sélectionner le fichier .sql dans src/main/resources/database/sql/changement_table_annonce.sql
+
 8. Pour builder l'application, exécuter la commande :
       > **mvn clean package**
    
