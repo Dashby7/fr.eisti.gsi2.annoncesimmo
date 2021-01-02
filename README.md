@@ -6,9 +6,10 @@
 2. Installer Maven 3.6.3+ (https://maven.apache.org/download.cgi).
 3. Configurer les répertoires correspondants dans le fichier cli.cmd à la racine du projet (version windows, faire le script équivalent si Linux).
 4. Lancer le script.
-5. Lancer MySQL (username : root, password : eisti0001).
+5. Lancer MySQL.
 6. Charger la table annonce avec le script Python.
-7. Via MySQLWorkbench (qu'on a normalement quand on fait l'installation de MySQL, faire **File > Open Script SQL** et sélectionner le fichier .sql dans src/main/resources/database/sql/changement_table_annonce.sql
+7. Via MySQLWorkbench (qu'on a normalement quand on fait l'installation de MySQL), faire **File > Open Script SQL** et sélectionner le fichier .sql dans **src/main/resources/database/sql/changement_table_annonce.sql**.
+On peut également exécuter ce script SQL en ligne de commande selon sa préférence, MySQLWorkbench étant juste plus simple à utiliser.
 
 8. Pour builder l'application, exécuter la commande :
       > **mvn clean package**
