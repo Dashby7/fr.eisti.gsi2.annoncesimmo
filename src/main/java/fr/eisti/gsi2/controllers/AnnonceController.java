@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -31,8 +32,16 @@ public class AnnonceController {
 
 	// Lancer la page d'accueil HTML (dans le répertoire templates)
 	@GetMapping("/index")
-	public String index() {
+	public String index(Model model) {
+		List<Annonce> list = this.getAllAnnonces();
+		model.addAttribute("annoncesListes", list);
 		return "index";
+	}
+
+	// Rediriger vers la page d'accueil
+	@GetMapping
+	public String indexRedir() {
+		return "redirect:/index";
 	}
 	
 	// Récupérer une annonce via son ID

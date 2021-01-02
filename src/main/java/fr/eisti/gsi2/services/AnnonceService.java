@@ -48,13 +48,13 @@ public class AnnonceService {
 	  }
 	  
 	  @Transactional
-	  public void deleteAnnonceById(Long id) {
-	    annonceRepository.deleteById(id);
+	  public List<AnnonceEntity> findByCriteres(String codePostal, String typeBien, String typeTransaction, Integer prixMin, Integer prixMax, Integer surfaceMin, Integer surfaceMax) {
+		  return annonceRepository.findByCriteres(codePostal, typeBien, typeTransaction, prixMin, prixMax, surfaceMin, surfaceMax);
 	  }
 	  
 	  @Transactional
-	  public List<AnnonceEntity> findByCriteres(String codePostal, String typeBien, String typeTransaction, Integer prixMin, Integer prixMax, Integer surfaceMin, Integer surfaceMax) {
-		  return annonceRepository.findByCriteres(codePostal, typeBien, typeTransaction, prixMin, prixMax, surfaceMin, surfaceMax);
+	  public void deleteAnnonceById(Long id) {
+	    annonceRepository.deleteById(id);
 	  }
 	  
 }
