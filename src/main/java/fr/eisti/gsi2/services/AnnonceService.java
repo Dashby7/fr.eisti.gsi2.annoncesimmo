@@ -51,10 +51,10 @@ public class AnnonceService {
 	  public void deleteAnnonceById(Long id) {
 	    annonceRepository.deleteById(id);
 	  }
-	  /*
-	  EN COURS
+	  
 	  @Transactional
-	  public List<AnnonceEntity> findByCriteres(String codePostal, String typeBien, String typeTransaction, int prixMin, int prixMax, int surfaceMin, int surfaceMax) {
+	  public List<AnnonceEntity> findByCriteres(String codePostal, String typeBien, String typeTransaction, Integer prixMin, Integer prixMax, Integer surfaceMin, Integer surfaceMax) {
 		  return annonceRepository.findByCriteres(codePostal, typeBien, typeTransaction, prixMin, prixMax, surfaceMin, surfaceMax);
-	  }*/
+	  }
+	  
 }
