@@ -4,11 +4,6 @@ ADD COLUMN `id` INT NULL FIRST;
 UPDATE modifiee
 SET id = (@rownum := 1 + @rownum)
 WHERE 0 = (@rownum:=0)
-ORDER BY id;
-
-UPDATE modifiee
-SET id = (@rownum := 1 + @rownum)
-WHERE 0 = (@rownum:=0)
 ORDER BY id
 LIMIT 20000;
 
