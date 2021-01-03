@@ -10,6 +10,7 @@ import fr.eisti.gsi2.entities.AnnonceEntity;
 
 public interface AnnonceRepository extends JpaRepository<AnnonceEntity,Long> {
 	
+	// Spécification de la méthode de requête par critères
 	@Query(value = "SELECT * FROM immobilier.annonce "
 			+ "WHERE (:codePostal is null or code_postal = :codePostal) "
 			+ "AND (:typeBien is null or type_bien = :typeBien) "

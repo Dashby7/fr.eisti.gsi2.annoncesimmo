@@ -57,4 +57,24 @@ public class AnnonceService {
 	    annonceRepository.deleteById(id);
 	  }
 	  
+	  @Transactional
+	  public List<AnnonceEntity> getAnnoncesOrderByPrixAsc() {
+		  return annonceRepository.findAll(Sort.by(Sort.Direction.ASC, "prix"));
+	  }
+	  
+	  @Transactional
+	  public List<AnnonceEntity> getAnnoncesOrderByPrixDesc() {
+		  return annonceRepository.findAll(Sort.by(Sort.Direction.DESC, "prix"));
+	  }
+	  
+	  @Transactional
+	  public List<AnnonceEntity> getAnnoncesOrderBySurfaceAsc() {
+		  return annonceRepository.findAll(Sort.by(Sort.Direction.ASC, "surface"));
+	  }
+	  
+	  @Transactional
+	  public List<AnnonceEntity> getAnnoncesOrderBySurfaceDesc() {
+		  return annonceRepository.findAll(Sort.by(Sort.Direction.DESC, "surface"));
+	  }
+	  
 }
