@@ -1,13 +1,106 @@
-<!DOCTYPE HTML>
-<html lang="fr">
+<!doctype html>
+<html lang="fr" xmlns:th="https://www.thymeleaf.org">
 <head>
   <meta charset="utf-8">
-  <title>Annonces immobilières</title>
-  <link rel="stylesheet" href="style.css">
-  <script></script>
+  <title>Accueil</title>
+  <link rel="stylesheet" type="text/css" th:href="@{/css/accueil.css}"/> 
+
 </head>
 <body>
+	<center>
+		<header >
+				
+			<h1 >ImmoProject</h1>
+			<table class="t1">
+				<tr>
+				<th> <a th:href="@{/index}">Recherche</a></th>
+				<th><a th:href="@{/deposerAnnonce}"> Déposer une annonce </a></th>
+				</tr>
+			</table>
+		</header>
+	</center>
+	<section>
+		<center>
+		<form th:action="@{/resultats}" method="get" class="main-form" id="formCriteres">
+			<table class="t2">
+			<tr>
+			<th colspan=3><font size="5px"> Vos critères de recherche </font></th>
+			</tr>
+			<tr>
+			<div class="main-form">
+			<td><label for="CodePostal"><strong>Code Postal:</strong></br> </label><input type="text" id="CodePostal" th:name="codePostal">
+			</br>
+			</div>
+			</td>
+			<div class="main-form">
+			<td><label for="SurfaceMin"><strong>Surface Min: </strong></br></label><input type="number" id="SurfaceMin" th:name="surfaceMin"></div></td>
+			<div class="main-form">
+			<td><label for="SurfaceMax"><strong>Surface Max: </strong></br></label><input type="number" id="SurfaceMax" th:name="surfaceMax"></div></td>
+			</tr>
+			<tr>
+			<div class="main-form">
+			<td><label for="PrixMin"><strong>Prix Min:</strong></br></label><input type="number" id="PrixMin" th:name="prixMin">
+			</div></td>
+			<div class="main-form">
+			<td><label for="PrixMax"><strong>Prix Max: </strong></br></label><input type="number" id="PrixMax" th:name="prixMax"></div></td>
+			<div class="main-form">
+			<td><label for="TypedeBien"><strong>Type de Bien:</strong></br></label> <select th:name="typeBien" id="TypedeBien">
+			<option value="">--Choisissez un type de bien--</option>
+			<option value="Activités/Entrepôts">Activités/Entrepôts</option>
+			<option value="bureau">Bureau</option>
+			<option value="commerce">Commerce</option>
+			<option value="coworking">Coworking</option>
+			<option value="plateformes-logistiques">Plateformes Logistiques</option>
+			<option value="terrain">Terrain</option>
+			</div></td>
+			</tr>
+			<tr>
+			<td style="background-color:rgb(255,255,255,0.0);border-style:none;"></td>
+			<div class="main-form">
+			<td>
+			  	<strong>Type de Transaction: <strong></br>
+			    <input type="radio" id="choix1"
+			     th:name="typeTransaction" value="à louer">
+			    <label for="choix1">à louer</label>
+			
+			    <input type="radio" id="choix2"
+			     th:name="typeTransaction" value="à vendre">
+			    <label for="choix2">à vendre</label>
 
-	<h1>HELLO WORLD!</h1>
+  			</div></td>
+			<td style="background-color:rgb(255,255,255,0.0);border-style:none;"></td>
+			</tr>
+			<tr>
+			<td style="background-color:rgb(255,255,255,0.0);border-style:none;"></td>
+			<td style="background-color:#E0DEDE;color:white;border-style:none;"><div class="main-form"><button type="submit" style="font-size:1.1em;"value="rechercher">Rechercher</button></div></td>
+			<td style="background-color:rgb(255,255,255,0.0); border-style:none;"></td>
+			</form>
+			</table>
+		</center>
+	</section>
+	<script>
+		var myForm = document.getElementById('formCriteres');
+
+		myForm.addEventListener('submit', function() {
+			var allInputs = myForm.getElementsByTagName('input');
+			var allSelects = myForm.getElementsByTagName('select');
+
+			for (var i = 0; i < allInputs.length; i++) {
+				var input = allInputs[i];
+
+				if (input.name && !input.value) {
+					input.name = '';
+				}
+			}
+			
+			for (var i = 0; i < allSelects.length; i++) {
+				var select = allSelects[i];
+
+				if (select.name && !select.value) {
+					select.name = '';
+				}
+			}
+		});
+	</script>
 </body>
 </html>

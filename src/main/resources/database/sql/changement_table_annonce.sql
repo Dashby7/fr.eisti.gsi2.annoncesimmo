@@ -7,8 +7,8 @@ WHERE 0 = (@rownum:=0)
 ORDER BY id
 LIMIT 20000;
 
-ALTER TABLE `immobilier`.`modifiee` 
-CHANGE COLUMN `id` `id` INT UNSIGNED NOT NULL ,
+ALTER TABLE `immobilier`.`annonce` 
+CHANGE COLUMN `id` `id` BIGINT UNSIGNED NOT NULL ,
 ADD PRIMARY KEY (`id`),
 ADD UNIQUE INDEX `id_UNIQUE` (`id` ASC) VISIBLE;
 

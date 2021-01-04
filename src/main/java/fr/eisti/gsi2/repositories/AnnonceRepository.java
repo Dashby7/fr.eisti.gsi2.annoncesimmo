@@ -15,7 +15,7 @@ public interface AnnonceRepository extends JpaRepository<AnnonceEntity,Long> {
 			+ "WHERE (:codePostal is null or code_postal = :codePostal) "
 			+ "AND (:typeBien is null or type_bien = :typeBien) "
 			+ "AND (:typeTransaction is null or type_transaction = :typeTransaction) "
-			+ "AND (:prixMax is null or (prix BETWEEN :prixMin AND :prixMax)) "
+			+ "AND (:prixMax is null or (prix_integer BETWEEN :prixMin AND :prixMax)) "
 			+ "AND (:surfaceMax is null or (surface BETWEEN :surfaceMin AND :surfaceMax))", 
 			nativeQuery = true)
 	List<AnnonceEntity> findByCriteres(

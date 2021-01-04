@@ -1,5 +1,6 @@
 package fr.eisti.gsi2.controllers;
 
+import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -32,10 +34,56 @@ public class AnnonceController {
 
 	// Lancer la page d'accueil HTML (dans le répertoire templates)
 	@GetMapping("/index")
-	public String index(Model model) {
-		List<Annonce> list = this.getAllAnnonces();
-		model.addAttribute("annoncesListes", list);
+	public String index() {
 		return "index";
+	}
+
+	
+	// Lance la page pour déposer une annonce
+	@GetMapping("/deposerAnnonce")
+	public String deposerAnnonce(Model model) {
+		
+		model.addAttribute("annonce", new Annonce());
+		
+		List<String> listTypeBien = Arrays.asList("Activités/Entrepôts", "Bureau", "Commerce", "Coworking", "Plateformes Logitiques", "Terrain");
+		List<String> listTypeTransaction = Arrays.asList("Louer", "Vendre");
+        
+		model.addAttribute("listTypeBien", listTypeBien);
+		model.addAttribute("listTypeTransaction", listTypeTransaction);
+        
+		
+		return "deposerAnnonce";
+	}
+
+	// Dépôt d'une annonce
+	@PostMapping("/deposerAnnonce")
+	public String submitForm(@ModelAttribute("annonce") Annonce annonce) {
+		
+		annonceService.saveOrUpdate(annonceMapper.mapToEntity(annonce));
+		return "depotReussi";
+	}
+	
+	
+
+	// Lancer la page de resultats (HTML)
+	@GetMapping("/resultats")
+	public String resultats(Model model, @RequestParam(value = "codePostal", required = false) String codePostal,
+			@RequestParam(value = "typeBien", required = false) String typeBien,
+			@RequestParam(value = "typeTransaction", required = false) String typeTransaction,
+			@RequestParam(value = "prixMin", required = false) Integer prixMin,
+			@RequestParam(value = "prixMax", required = false) Integer prixMax,
+			@RequestParam(value = "surfaceMin", required = false) Integer surfaceMin,
+			@RequestParam(value = "surfaceMax", required = false) Integer surfaceMax) {
+
+		if (prixMin == null)
+			prixMin = 0;
+		if (surfaceMin == null)
+			surfaceMin = 0;
+
+		List<Annonce> list = this.findParCriteres(codePostal, typeBien, typeTransaction, prixMin, prixMax, surfaceMin,
+				surfaceMax);
+		model.addAttribute("annoncesListes", list);
+		return "resultats";
 	}
 
 	// Rediriger vers la page d'accueil
@@ -93,10 +141,10 @@ public class AnnonceController {
 		annonceService.deleteAnnonceById(id);
 	}
 
-	// Rechercher des annonces par critères
-	@GetMapping("/annoncesRecherches")
+	// Rechercher des annonces par critères (JSON)
+	@GetMapping("/annonceRecherches")
 	@ResponseBody
-	public List<AnnonceEntity> findParCriteres(@RequestParam(value = "codePostal", required = false) String codePostal,
+	public List<Annonce> findParCriteres(@RequestParam(value = "codePostal", required = false) String codePostal,
 			@RequestParam(value = "typeBien", required = false) String typeBien,
 			@RequestParam(value = "typeTransaction", required = false) String typeTransaction,
 			@RequestParam(value = "prixMin", required = false) Integer prixMin,
@@ -109,8 +157,8 @@ public class AnnonceController {
 		if (surfaceMin == null)
 			surfaceMin = 0;
 
-		return annonceService.findByCriteres(codePostal, typeBien, typeTransaction, prixMin, prixMax, surfaceMin,
-				surfaceMax);
+		return annonceMapper.mapToDTO(annonceService.findByCriteres(codePostal, typeBien, typeTransaction, prixMin,
+				prixMax, surfaceMin, surfaceMax));
 	}
 
 	// Rechercher toutes les annonces par prix croissant

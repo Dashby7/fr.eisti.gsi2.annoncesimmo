@@ -32,11 +32,14 @@ public class AnnonceEntity implements Serializable {
 	@Column(name="code_postal")
 	private String codePostal;
 	
+	@Column(name="prix_integer")
+	private int prix;
+	
 	@Column(name="prix")
-	private String prix;
+	private String prixString;
 	
 	@Column(name="surface")
-	private Long surface;
+	private int surface;
 	
 	@Column(name="divisibilite")
 	private String divisibilite;
@@ -98,16 +101,24 @@ public class AnnonceEntity implements Serializable {
 	public void setCodePostal(String codePostal) {
 		this.codePostal = codePostal;
 	}
-	public String getPrix() {
+	public int getPrix() {
 		return prix;
 	}
-	public void setPrix(String prix) {
+	public void setPrix(int prix) {
 		this.prix = prix;
 	}
-	public Long getSurface() {
+	
+	public String getPrixString() {
+		return prixString;
+	}
+	public void setPrixString(String prixString) {
+		this.prixString = prixString;
+	}
+	
+	public int getSurface() {
 		return surface;
 	}
-	public void setSurface(Long surface) {
+	public void setSurface(int surface) {
 		this.surface = surface;
 	}
 	public String getDivisibilite() {

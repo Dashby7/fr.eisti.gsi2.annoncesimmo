@@ -1,0 +1,57 @@
+body {
+font-family: Arial;
+background-image:url("https://www.assurgerance.com/wp-content/uploads/2017/11/11005907-18237722.jpg");
+background-repeat:no-repeat;
+background-attachment:fixed;
+background-size:cover;
+
+}
+header{
+	margin-bottom: 3%;
+	position: sticky;
+	top:0;
+}
+header h1 {
+		font-size: 35px;
+	
+}
+header a {
+	margin: 2%;
+	text-decoration: none;
+	padding: 10px;
+	font-size: 25px;
+	color: #2C2A2A;
+}
+.t1{
+border-spacing:10px;
+}
+.t1 th{
+border:2px solid #2C2A2A;
+padding:10px;
+}
+
+.t2{
+border-spacing:20px;
+background-color:rgb(255,255,255,0.6);
+width:75%;
+height:60%;
+margin-bottom:5%;
+font-size:1.3em;
+}
+.t2 th{
+font-size:2em;
+font-weight:bold;)
+color: black;
+vertical-align:top;
+padding:5px;
+}
+.t2 td{
+border-radius:20px;
+border:2px solid #E0DEDE;
+background-color:#E0DEDE;
+color: strong black;
+text-align:center;
+width:25%;
+height:10%;
+}
+

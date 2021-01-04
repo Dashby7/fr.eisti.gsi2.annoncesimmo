@@ -10,7 +10,8 @@
 	</parent>
 	<groupId>fr.eisti.gsi2</groupId>
 	<artifactId>annonces-immo</artifactId>
-	<version>2.0</version>
+	<packaging>war</packaging>
+	<version>3.0</version>
 	<name>annonces-immo</name>
 	<description>Projet Java GSI2 annonces immobilières</description>
 
@@ -32,6 +33,12 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
+		<dependency>
+        	<groupId>org.springframework.boot</groupId>
+        	<artifactId>spring-boot-devtools</artifactId>
+        	<scope>runtime</scope>
+        	<optional>true</optional>
+    	</dependency>
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
@@ -70,6 +77,14 @@
                     </path>
                     <!-- other annotation processors -->
                 </annotationProcessorPaths>
+            </configuration>
+        </plugin>
+        <plugin>
+        	<groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-war-plugin</artifactId>
+            <configuration>
+            	<attachClasses>true</attachClasses>
+                <unpackTypes>war</unpackTypes>
             </configuration>
         </plugin>
 		</plugins>

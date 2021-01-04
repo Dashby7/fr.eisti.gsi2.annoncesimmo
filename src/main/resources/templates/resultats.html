@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="fr" xmlns:th="https://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8">
+  
+</head>
+<body>
+
+	<th:block th:include="/index"></th:block>
+	<div id="containerAnnonce" th:style="'	display: flex;flex-wrap: wrap;font-size:1.3em;font-weight:bold;justify-content: space-around;'">
+		
+		<div th:style="'position:relative;width: 33%;background-color:rgb(255,255,255,0.8);margin-bottom:5px;'" class='container' th:each="annonce : ${annoncesListes}">
+			<div class="containerPhoto" th:style="'position: relative;overflow: hidden;'">
+				<a th:href="${annonce.getLien()}"> <img th:style="'max-width: 100%;'" th:src="${annonce.getLienPhoto()}" alt="photo"/></a>
+			</div>
+			<div class="nom"><p th:utext="'Nom Annonce : '+${annonce.getNomAnnonce()}"> </p></div>
+			<div class="ville"><p th:utext="'Ville : '+${annonce.getVille()}"> </p></div>
+			<div class="surface"><p th:utext="'Surface : '+${annonce.getSurface() }+' m²'"> </p></div>
+			<div class="prix"><p th:utext="'Prix : '+${annonce.getPrix()}+ ' €'"> </p></div>
+			<div class="dispo"><p th:utext="'Disponibilité : '+${annonce.getDisponibilite()}"> </p></div>
+			<div class="typeBien"><p th:utext="'Type de bien : '+${annonce.getTypeBien()}"> </p></div>
+			<div class="typeTransac"><p th:utext="'Type de transaction : '+${annonce.getTypeTransaction()}"> </p></div>
+			<div class="Commercialisateur"><p th:utext="'Commercialisateur : '+${annonce.getSite()}"> </p></div>
+			<div class="Contact "><p th:utext="'Contact : '+${annonce.getContact()}"> </p></div>
+			
+		</div>
+	</div>
+</body>
+</html>

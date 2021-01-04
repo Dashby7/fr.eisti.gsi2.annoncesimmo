@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="fr" xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title>Déposer une annonce</title>
+<link rel="stylesheet" type="text/css" th:href="@{/css/deposer.css}" />
+
+</head>
+<body>
+	<div align="center">
+		<header>
+
+			<h1>ImmoProject</h1>
+			<table class="t1">
+				<tr>
+					<th><a th:href="@{/index}">Recherche</a></th>
+					<th><a th:href="@{/deposerAnnonce}"> Déposer une annonce </a></th>
+				</tr>
+			</table>
+
+		</header>
+	</div>
+
+	<div align="center">
+		<form action="#" th:action="@{/deposerAnnonce}" method="post" th:object="${annonce}">
+			<table class="t3">
+				<tr>
+					<th colspan=3><font size="10pt"> Annonce </font></th>
+				</tr>
+				<tr>
+					<td>Nom de l'annonce : <input type="text" th:field="*{nomAnnonce}" id="nomAnnonce"
+						name="nomAnnonce" required></td>
+					<td>Ville :<input type="text" th:field="*{ville}"
+						id="ville" name="ville" required></td>
+				</tr>
+				<tr>
+					<td>Adresse :<input type="text" th:field="*{adresse}"
+						id="adresse" name="Adresse">
+					</td>
+					<td>Prix : <input type="text" th:field="*{prix}" id="prix"
+						name="prix" required></td>
+				</tr>
+				<tr>
+					<td>Surface (en m²) : <input type="text" th:field="*{surface}"
+						id="surface" name="surface" required></td>
+					<td>Disponibilité : <input type="text"
+						th:field="*{disponibilite}" id="disponibilite"
+						name="Disponibilite" required></td>
+				</tr>
+				<tr>
+					<td>
+						Type de bien : 
+						<select name="typeBien" th:field="*{typeBien}" id="TypedeBien" required>
+							<option th:each="b : ${listTypeBien}" th:value="${b}" th:text="${b}" />
+						</select>
+					</td>
+					<td>
+						Type de transaction :
+						<select name="typeTransaction" th:field="*{typeTransaction}" id="TypedeTransaction" required>
+							<option th:each="t : ${listTypeTransaction}" th:value="${t}" th:text="${t}" />
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td colspan=2>Divisibilité : <input type="text"
+						th:field="*{divisibilite}" id="divisibilite" name="divisibilite"
+						required minlength="0" maxlength="200" size="50"
+						style="height: 25px;">
+				</tr>
+				<tr>
+					<td colspan=2
+						style="background-color: #E0DEDE; color: white; border-style: none; text-align: center">
+						<button type="submit" value="Deposer">Déposer</button>
+					</td>
+				</tr>
+			</table>
+		</form>
+	</div>
+</body>
+</html>
