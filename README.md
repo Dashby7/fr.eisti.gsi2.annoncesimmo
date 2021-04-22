@@ -1,4 +1,4 @@
-# Projet Annonces Immobilières (ING2 Projet JavaEE - CYTECH)
+# Projet Annonces Immobilières (Projet JavaEE)
 
 ## Pour démarrer l'application
 
